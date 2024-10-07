@@ -23,14 +23,14 @@ func attack(charName, charClass string) string {
 
 // обратите внимание на "if else" и на "else"
 func defence(charName, charClass string) string {
-	switch  {
-	case charClass == "warrior" 
+	switch {
+	case charClass == "warrior":
 		return fmt.Sprintf("%s блокировал %d урона.", charName, 10+randint(5, 10))
-	case charClass == "mage" 
+	case charClass == "mage":
 		return fmt.Sprintf("%s блокировал %d урона.", charName, 10+randint(-2, 2))
-	case charClass == "healer" 
+	case charClass == "healer":
 		return fmt.Sprintf("%s блокировал %d урона.", charName, 10+randint(2, 5))
-	default :  
+	default:
 		return "неизвестный класс персонажа"
 	}
 }
@@ -38,13 +38,13 @@ func defence(charName, charClass string) string {
 // обратите внимание на "if else" и на "else"
 func special(charName, charClass string) string {
 	switch {
-		case charClass == "warrior" 
+	case charClass == "warrior":
 		return fmt.Sprintf("%s применил специальное умение `Выносливость %d`", charName, 80+25)
-	       case charClass == "mage" 
+	case charClass == "mage":
 		return fmt.Sprintf("%s применил специальное умение `Атака %d`", charName, 5+40)
-	       case charClass == "healer" 
+	case charClass == "healer":
 		return fmt.Sprintf("%s применил специальное умение `Защита %d`", charName, 10+30)
-	default :
+	default:
 		return "неизвестный класс персонажа"
 	}
 }
@@ -79,7 +79,7 @@ func start_training(charName, charClass string) string {
 		}
 
 		if cmd == "defence" {
-			fmt.Println(defence(charNamee, charClass))
+			fmt.Println(defence(charName, charClass))
 		}
 
 		if cmd == "special" {
@@ -98,7 +98,7 @@ func choise_charClass() string {
 	for approve_choice != "y" {
 		fmt.Print("Введи название персонажа, за которого хочешь играть: Воитель — warrior, Маг — mage, Лекарь — healer: ")
 		fmt.Scanf("%s\n", &charClass)
-		if charClasss == "warrior" {
+		if charClass == "warrior" {
 			fmt.Println("Воитель — дерзкий воин ближнего боя. Сильный, выносливый и отважный.")
 		} else if charClass == "mage" {
 			fmt.Println("Маг — находчивый воин дальнего боя. Обладает высоким интеллектом.")
